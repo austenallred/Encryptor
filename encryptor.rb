@@ -1,6 +1,7 @@
 class Encryptor
     def encrypt(letter)
-      cipher[letter]
+      lowercase_letter = letter.downcase
+      cipher[lowercase_letter]
     end
   def cipher
     {'a' => 'а', 'b' => 'б', 'c' => 'ц', 'd' => 'д', 'e' => 'е', 'f' => 'ф', 'g' => 'г', 
