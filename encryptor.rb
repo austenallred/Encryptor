@@ -6,10 +6,10 @@ class Encryptor
 
   def encrypt(string)
     letters = string.split("")
-    
+    results = []
     letters.collect do |letter|
       encrypted_letter = encrypt_letter(letter)
-      
+      results.push(encrypted_letter)
   end
 end
 # Join the results in one string
