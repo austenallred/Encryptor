@@ -1,7 +1,14 @@
 class Encryptor
-    def encrypt(letter)
+    def encrypt_letter(letter)
       lowercase_letter = letter.downcase
       cipher[lowercase_letter]
+    end
+
+    def encrypt(string)
+      # Cut the string into letters
+      letters = string.split("")
+      # Encrypt the letters one at a time
+      # Join the results back together in one string
     end
   def cipher
     {'a' => 'а', 'b' => 'б', 'c' => 'ц', 'd' => 'д', 'e' => 'е', 'f' => 'ф', 'g' => 'г', 
