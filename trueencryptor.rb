@@ -4,12 +4,12 @@ class Encryptor
     cipher_for_rotation[letter]
   end
 
-  def encrypt(string)
+  def encrypt(string,rotation)
     letters = string.split("")
-    results = letters.collect do |letter|
-      encrypt_letter(letter)
+    letter = letters.collect do |letter|
+      encrypt_letter(letter,rotation)
     end
-      end_results = results.join
+      end_results = letter.join
       puts "#{end_results}"
   end
 
