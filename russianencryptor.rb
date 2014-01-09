@@ -1,22 +1,23 @@
 class Encryptor
-  def encrypt_letter(letter,rotation)
-    cipher_for_rotation = cipher(rotation)
-    cipher_for_rotation[letter]
+  def encrypt_letter(letter)
+    lowercase_letter = letter.downcase
+    cipher[lowercase_letter]
   end
 
-  def encrypt(string,rotation)
+  def encrypt(string)
     letters = string.split("")
-    letter = letters.collect do |letter|
-      encrypt_letter(letter,rotation)
-    end
-      end_results = letter.join
+    results = letters.collect do |letter|
+      encrypt_letter(letter)
+  end
+      end_results = results.join
       puts "#{end_results}"
   end
 
-  def cipher(rotation)
-    characters = (' '..'z').to_a
-    rotated_characters = characters.rotate(rotation)
-    Hash[characters.zip(rotated_characters)]
+  def cipher
+    {'a' => 'а', 'b' => 'б', 'c' => 'ц', 'd' => 'д', 'e' => 'е', 'f' => 'ф', 'g' => 'г', 
+   'h' => 'ч', 'i' => 'и', 'j' => 'й', 'k' => 'к', 'l' => 'л', 'm' => 'м', 'n' => 'н', 
+   'o' => 'о', 'p' => 'п', 'q' => 'я', 'r' => 'р', 's' => 'с', 't' => 'т', 'u' => 'у', 
+   'v' => 'в', 'w' => 'ш', 'x' => 'х', 'y' => 'ы', 'z' => 'з', 'nil' =>' '}
   end
 end
 
@@ -41,4 +42,5 @@ class Decryptor
    'о' => 'o', 'п' => 'p', 'я' => 'q', 'р' => 'r', 'с' => 's', 'т' => 't', 'у' => 'u', 
    'в' => 'v', 'ш' => 'w', 'х' => 'x', 'ы' => 'y', 'з' => 'z', 'nil' =>' '}
    end
+
 end
