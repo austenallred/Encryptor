@@ -1,2 +1,2 @@
-Hello, world! 
-This is a file, hooray. 
+Hello, world!
+This is a file, hooray.
