@@ -22,4 +22,14 @@ class Encryptor
     rotated_characters = characters.rotate(rotation)
     Hash[characters.zip(rotated_characters)]
   end
+
+  def encrypt_file(filename, rotation)
+#1. Create the new file handle to the input file
+#2. Read the text of the input file
+#3. Encrypt the text
+#4. Create a name for the output file
+#5. Create an output file handle
+#6. Write out the text
+#7. Close the file
+  end
 end
