@@ -5,7 +5,7 @@ class Encryptor
       results = letters.collect do |letter|
         encrypt_letter(letter,rotation)
       end
-      results.join
+      to_print = results.join
     end
 
   def decrypt(string,rotation)
@@ -24,12 +24,22 @@ class Encryptor
   end
 
   def encrypt_file(filename, rotation)
-#1. Create the new file handle to the input file
-#2. Read the text of the input file
-#3. Encrypt the text
-#4. Create a name for the output file
-#5. Create an output file handle
-#6. Write out the text
-#7. Close the file
+    input = File.open(filename, "r")
+    string = input.read
+    encrypted_text = encrypt(string, rotation)
+    output_filename = filename.gsub(".txt", ".txt.encrypted")
+    output = File.open(output_filename, "w")
+    output.write(encrypted_text)
+    output.close
   end
+
+  def decrypt_file(filename, rotation)
+    input = File.open(filename, "r")
+    string = input.read
+    decrypted_text = encrypt(string, -rotation)
+    output_filename = filename.gsub(".encrypted", ".decrypted")
+    output = File.open(output_filename, "w")
+    output.write(decrypted_text)
+    output.close
+  end   
 end
